@@ -1,0 +1,16 @@
+language: ruby
+
+rvm:
+- 2.1
+- 2.0.0
+- 1.9.3
+- ruby-head
+
+matrix:
+  allow_failures:
+  - rvm: ruby-head
+
+script:
+  - bundle exec rake
+  - bundle exec knife helper init -B -L
+  - bundle exec knife helper exec default
