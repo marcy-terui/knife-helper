@@ -1,5 +1,7 @@
 # Knife::Helper
 
+[![Gem Version](https://badge.fury.io/rb/knife-helper.svg)](http://badge.fury.io/rb/knife-helper) [![Build Status](https://travis-ci.org/marcy-terui/knife-helper.svg?branch=master)](https://travis-ci.org/marcy-terui/knife-helper)
+
 Helper and Command builder for `knife` (`chef-server`, `knife-zero`, etc)
 
 ## Installation
