@@ -18,13 +18,13 @@ class Chef
         :short => "-c [PATH1,PATH2...]",
         :long => "--cookbook-path [PATH1,PATH2...]",
         :description => "Path to Cookbooks",
-        :default => "../cookbooks,../site-cookbooks"
+        :default => "./cookbooks,./site-cookbooks"
 
       option :repo_path,
         :short => "-r PATH",
         :long => "--repo-path PATH",
         :description => "Path to Chef Repogitory",
-        :default => "../"
+        :default => "./"
 
       option :use_berks,
         :short => "-B",
