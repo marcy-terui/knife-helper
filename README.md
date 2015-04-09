@@ -49,7 +49,7 @@ $ knife helper exec NAME (option)
 ```yaml
 ---
 settings:
-  exec_path: /home/marcy/.rbenv/versions/2.1.5/bin/knife
+  command_base: /home/marcy/.rbenv/versions/2.1.5/bin/knife
 
 commands:
   - name: default
@@ -58,7 +58,7 @@ commands:
     options:
 ```
 
-### settings:exec_path
+### settings:command_base
 Path to `knife` execution script.
 
 ### commands:name
@@ -70,6 +70,8 @@ Condition for search and execute command.
 ### commands:option
 Command options.
 
+## ChangeLog
+see [CHANGELOG](https://github.com/marcy-terui/knife-helper/blob/master/CHANGELOG.md)
 
 ## Contributing
 

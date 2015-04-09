@@ -4,7 +4,7 @@ module Knife
     class Commands
 
       def initialize(config)
-        @base = config['settings']['exec_path']
+        @base = config['settings']['command_base']
         @commands = config['commands']
       end
 

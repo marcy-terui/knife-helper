@@ -40,6 +40,13 @@ class Chef
         :boolean => true,
         :default => false
 
+      option :use_bundle
+        :short => "-b",
+        :long => "--bundle",
+        :description => "Exec commands by bundler",
+        :boolean => true,
+        :default => false
+
       def run
         create_helper_yml
         create_knife_rb
@@ -50,8 +57,9 @@ class Chef
       private
 
       def create_helper_yml
+        command_base = config[:use_bundle] ? "bundle exec knife" : $0
         ::Knife::Helper::Template.new("helper.yml.erb", ".knife.helper.yml",
-          :exec_path => $0
+          :command_base => command_base
         ).flush
       end
 

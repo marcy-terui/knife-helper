@@ -9,7 +9,7 @@ describe Knife::Helper::Commands do
   let(:config) do
     {
       'settings' => {
-        'exec_path' => '/test/knife'
+        'command_base' => '/test/knife'
       },
       'commands' => [
         {
