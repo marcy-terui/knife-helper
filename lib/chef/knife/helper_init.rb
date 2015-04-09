@@ -40,7 +40,7 @@ class Chef
         :boolean => true,
         :default => false
 
-      option :use_bundle
+      option :use_bundle,
         :short => "-b",
         :long => "--bundle",
         :description => "Exec commands by bundler",
