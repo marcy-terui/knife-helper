@@ -10,7 +10,9 @@ module Knife
       def initialize(source, target, params={})
         super()
         self.class.source_root(
-          Pathname.new(File.expand_path("../../../../", __FILE__)).join("templates")
+          Pathname.new(
+            File.expand_path("../../../../", __FILE__)
+          ).join("templates")
         )
         @source = source
         @target = target

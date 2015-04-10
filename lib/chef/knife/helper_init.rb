@@ -65,9 +65,9 @@ class Chef
 
       def create_knife_rb
         ::Knife::Helper::Template.new("knife.rb.erb", ".chef/knife.rb",
-            :local_mode => config[:use_local_mode].to_s,
-            :cookbook_path => config[:cookbook_path].split(',').to_s,
-            :repo_path => "\"#{config[:repo_path]}\""
+          :local_mode => config[:use_local_mode].to_s,
+          :cookbook_path => config[:cookbook_path].split(',').to_s,
+          :repo_path => "\"#{config[:repo_path]}\""
         ).flush
       end
 

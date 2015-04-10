@@ -1,7 +1,6 @@
 require 'chef'
-require 'safe_yaml'
-require 'erb'
 require 'knife/helper/commands'
+require 'knife/helper/config'
 
 class Chef
   class Knife
@@ -25,7 +24,7 @@ class Chef
       def run
         file = config[:file] == "" ? default_config_file : config[:file]
         commands = ::Knife::Helper::Commands.new(
-          load_yml(get_content(read_file(file)))
+          ::Knife::Helper::Config.new(file).data
         )
         @name_args.each do |cmd|
           if config[:print_command]
@@ -38,20 +37,8 @@ class Chef
 
       private
 
-      def read_file(file)
-        ::File.exist?(file.to_s) ? IO.read(file) : ""
-      end
-
       def default_config_file
         ::File.join(Dir.pwd, ".knife.helper.yml")
-      end
-
-      def get_content(str)
-        ::ERB.new(str).result
-      end
-
-      def load_yml(str)
-        ::SafeYAML.load(str) || Hash.new
       end
 
     end

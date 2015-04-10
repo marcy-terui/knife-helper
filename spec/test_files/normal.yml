@@ -1,0 +1,11 @@
+---
+settings:
+  command_base: bundle exec knife
+
+commands:
+  - name: test
+    command: zero chef_client
+    condition: chef_environment:test
+    options:
+      ssh-user: ec2-user
+      sudo:

@@ -1,0 +1,17 @@
+---
+settings:
+  command_base: bundle exec knife
+  test01: value01
+  test02: value02
+
+includes:
+  - include01.yml
+  - include02.yml
+
+commands:
+  - name: test
+    command: zero chef_client
+    condition: chef_environment:test
+    options:
+      ssh-user: ec2-user
+      sudo:

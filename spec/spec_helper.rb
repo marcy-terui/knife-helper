@@ -89,3 +89,7 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+def test_file_path(file)
+  File.expand_path("../test_files/#{file}", __FILE__)
+end
