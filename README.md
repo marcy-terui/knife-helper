@@ -77,7 +77,7 @@ Condition for search and execute command.
 Command options.
 
 ## ChangeLog
-see [CHANGELOG](https://github.com/marcy-terui/knife-helper/blob/master/CHANGELOG.md)
+see [CHANGELOG][changelog]
 
 ## Contributing
 
@@ -105,4 +105,5 @@ Apache 2.0 (see [LICENSE][license])
 [author]:           https://github.com/marcy-terui
 [issues]:           https://github.com/marcy-terui/knife-helper/issues
 [license]:          https://github.com/marcy-terui/knife-helper/blob/master/LICENSE.txt
+[changelog]:        https://github.com/marcy-terui/knife-helper/blob/master/CHANGELOG.md
 [repo]:             https://github.com/marcy-terui/knife-helper
