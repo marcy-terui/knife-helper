@@ -24,12 +24,11 @@ class Chef
         else
           cm = commands.commands
         end
+        hash = {}
         cm.map! do |c|
-          {
-            c['name'] => c['command']
-          }
+          hash[c['name']] = c['command']
         end
-        output(format_for_display(cm))
+        output(ui.presenter.format_for_display(hash))
       end
 
       private
