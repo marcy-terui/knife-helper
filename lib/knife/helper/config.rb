@@ -8,7 +8,8 @@ module Knife
 
       attr_reader :data
 
-      def initialize(file)
+      def initialize(file=nil)
+        file ||= default_file
         @data = load_config(file)
       end
 
@@ -25,6 +26,10 @@ module Knife
           )
         end
         conf
+      end
+
+      def default_file
+        ::File.join(Dir.pwd, ".knife.helper.yml")
       end
 
       def read_file(file)

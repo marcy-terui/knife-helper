@@ -6,35 +6,31 @@ class Chef
   class Knife
     class HelperList < Chef::Knife
 
-      banner "knife helper list REGEX (option)"
+      banner "knife helper list"
 
       option :file,
         :short => "-f FILE",
         :long => "--file FILE",
         :description => "Path to config file(yaml)",
-        :default => ""
+        :default => nil
+
+      option :all,
+        :short => "-a",
+        :long => "--all",
+        :description => "Print all commands and options",
+        :boolean => true,
+        :default => false
 
       def run
-        file = config[:file] == "" ? default_config_file : config[:file]
-        commands = ::Knife::Helper::Commands.new(
-          ::Knife::Helper::Config.new(file).data
-        )
-        unless @name_args.empty?
-          cm = commands.commands.select{|c| Regexp.new(@name_args.first).match(c['name']) }
-        else
-          cm = commands.commands
+        ::Knife::Helper::Commands.new(
+          ::Knife::Helper::Config.new(config[:file]).data
+        ).commands.each do |c|
+          if config[:all]
+            output(ui.presenter.format_for_display(c))
+          else
+            output c['name']
+          end
         end
-        hash = {}
-        cm.map! do |c|
-          hash[c['name']] = c['command']
-        end
-        output(ui.presenter.format_for_display(hash))
-      end
-
-      private
-
-      def default_config_file
-        ::File.join(Dir.pwd, ".knife.helper.yml")
       end
 
     end

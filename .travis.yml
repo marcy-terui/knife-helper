@@ -12,4 +12,6 @@ matrix:
 script:
   - bundle exec rake
   - bundle exec knife helper init -B -L
+  - bundle exec knife helper list
+  - bundle exec knife helper build default
   - bundle exec knife helper exec default

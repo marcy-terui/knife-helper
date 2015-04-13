@@ -19,26 +19,19 @@ class Chef
         :short => "-f FILE",
         :long => "--file FILE",
         :description => "Path to config file(yaml)",
-        :default => ""
+        :default => nil
 
       def run
-        file = config[:file] == "" ? default_config_file : config[:file]
         commands = ::Knife::Helper::Commands.new(
-          ::Knife::Helper::Config.new(file).data
+          ::Knife::Helper::Config.new(config[:file]).data
         )
         @name_args.each do |cmd|
           if config[:print_command]
-            puts commands.build(cmd)
+            output commands.build(cmd)
           else
             commands.exec(cmd)
           end
         end
-      end
-
-      private
-
-      def default_config_file
-        ::File.join(Dir.pwd, ".knife.helper.yml")
       end
 
     end
