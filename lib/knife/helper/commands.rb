@@ -3,6 +3,8 @@ module Knife
   module Helper
     class Commands
 
+      attr_reader :commands
+
       def initialize(config)
         @base = config['settings']['command_base']
         @commands = config['commands']
