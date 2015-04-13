@@ -1,3 +1,8 @@
+## 0.0.5
+
+* Add `build` subcommand (Previously was `list`)
+* Change `list` subcommand to only listing
+
 ## 0.0.4
 
 * Add `list` subcommand [#4] ([@sawanoboly])
