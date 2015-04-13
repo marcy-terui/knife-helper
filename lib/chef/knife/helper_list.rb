@@ -6,7 +6,7 @@ class Chef
   class Knife
     class HelperList < Chef::Knife
 
-      banner "knife helper list"
+      banner "knife helper list (options)"
 
       option :file,
         :short => "-f FILE",

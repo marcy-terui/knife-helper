@@ -35,6 +35,25 @@ $ knife helper init (options)
 -L, --librarian                  Generate Cheffile
 ```
 
+### knife helper list
+List all command names (and options)
+
+```
+$ knife helper init (options)
+-a, --all                        Print all commands and options
+-f, --file FILE                  Path to config file(yaml)
+-F, --format FORMAT              Which format to use for output
+```
+
+### knife helper build
+Build and output some command that built from the configuration file.
+
+```
+$ knife helper build REGEX (option)
+-f, --file FILE                  Path to config file(yaml)
+-F, --format FORMAT              Which format to use for output
+```
+
 ### knife helper exec
 Execute some command that built from the configuration file.
 
