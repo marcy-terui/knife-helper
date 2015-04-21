@@ -12,7 +12,8 @@ matrix:
 script:
   - bundle exec rake
   - bundle exec knife helper init -B -L
-  - cp -f integration_test/* ./
+  - cp -f integration_test/.knife.helper.yml ./
+  - cp -f integration_test/.include.yml ./
   - bundle exec knife helper list
   - bundle exec knife helper build create
   - bundle exec knife helper exec create -p
