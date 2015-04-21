@@ -1,6 +1,6 @@
 option_sets:
   - name: aws
-  options:
-    aws-access-key-id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
-    aws-secret-access-key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
-    region: ap-southeast-1
+    options:
+      aws-access-key-id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+      aws-secret-access-key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+      region: ap-southeast-1
