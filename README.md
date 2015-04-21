@@ -73,6 +73,10 @@ includes:
 settings:
   command_base: /home/marcy/.rbenv/versions/2.1.5/bin/knife
 
+option_sets:
+  - name: default
+    options:
+
 commands:
   - name: default
     command: help
@@ -81,19 +85,32 @@ commands:
 ```
 
 ### includes
-Include some external configuration files.
+Include some external configuration files.  
+Type: `Array`
+
+### option_sets:name
+Name of options for use commands.  
+Type: `String`
+
+### commands:options
+Set od options.  
+Type: `Hash`
 
 ### settings:command_base
 Path to `knife` execution script.
+Type: `String`
 
 ### commands:name
-Command name for execution.  
+Name of command for execution.  
+Type: `String`
 
 ### commands:condition
-Condition for search and execute command.
+Condition for search and execute command.  
+Type: `String`
 
-### commands:option
-Command options.
+### commands:options
+Command options.  
+Type: `Hash`
 
 ## ChangeLog
 see [CHANGELOG][changelog]
