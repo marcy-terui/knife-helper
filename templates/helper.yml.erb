@@ -4,8 +4,13 @@ includes:
 settings:
   command_base: <%= config[:command_base] %>
 
+option_sets:
+  - name: default
+    options:
+
 commands:
   - name: default
     command:
     condition:
+    option_sets:
     options:
