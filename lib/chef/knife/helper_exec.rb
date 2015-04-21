@@ -22,8 +22,11 @@ class Chef
         :default => nil
 
       def run
+        conf = ::Knife::Helper::Config.new(config[:file])
         commands = ::Knife::Helper::Commands.new(
-          ::Knife::Helper::Config.new(config[:file]).data
+          conf.settings['command_base'],
+          conf.commands,
+          conf.option_sets
         )
         @name_args.each do |cmd|
           if config[:print_command]

@@ -22,8 +22,11 @@ class Chef
         :default => false
 
       def run
+        conf = ::Knife::Helper::Config.new(config[:file])
         ::Knife::Helper::Commands.new(
-          ::Knife::Helper::Config.new(config[:file]).data
+          conf.settings['command_base'],
+          conf.commands,
+          conf.option_sets
         ).commands.each do |c|
           if config[:all]
             output(ui.presenter.format_for_display(c))

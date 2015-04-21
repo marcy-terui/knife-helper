@@ -15,8 +15,11 @@ class Chef
         :default => nil
 
       def run
+        conf = ::Knife::Helper::Config.new(config[:file])
         commands = ::Knife::Helper::Commands.new(
-          ::Knife::Helper::Config.new(config[:file]).data
+          conf.settings['command_base'],
+          conf.commands,
+          conf.option_sets
         )
         unless @name_args.empty?
           cm = commands.commands.select{|c| Regexp.new(@name_args.first).match(c['name']) }
@@ -25,7 +28,7 @@ class Chef
         end
         hash = {}
         cm.map! do |c|
-          hash[c['name']] = c['command']
+          hash[c['name']] = commands.build(c['name'])
         end
         output(ui.presenter.format_for_display(hash))
       end

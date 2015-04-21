@@ -6,11 +6,14 @@ module Knife
   module Helper
     class Config
 
-      attr_reader :data
+      attr_reader :settings, :option_sets, :commands
 
       def initialize(file=nil)
         file ||= default_file
-        @data = load_config(file)
+        conf = load_config(file)
+        @settings = conf['settings']
+        @option_sets = conf['option_sets']
+        @commands = conf['commands']
       end
 
       def load_config(file)

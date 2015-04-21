@@ -1,0 +1,14 @@
+---
+includes:
+  - .include.yml
+
+settings:
+  command_base: bundle exec rake
+
+commands:
+  - name: create
+    command: ec2 server create
+    option_sets:
+      - aws
+    options:
+      flavor: t2.micro
