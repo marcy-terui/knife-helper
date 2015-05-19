@@ -59,6 +59,13 @@ describe Knife::Helper::Commands do
           }
         },
         {
+          'name' => 'knife-zero-opts-3',
+          'command' => 'zero chef_client',
+          'condition' => 'name:*',
+          'option_sets' => 'test_set02',
+          'options' => nil
+        },
+        {
           'name' => 'help',
           'command' => 'help',
           'condition' => nil,
@@ -84,6 +91,10 @@ describe Knife::Helper::Commands do
     example do
       expect(@cmd.build('knife-zero-opts-2')).to eq(
         '/test/knife zero chef_client \'name:*\' -i ~/.ssh/knife-helper-example.pem -x ubuntu --sudo --attribute ipaddress')
+    end
+    example do
+      expect(@cmd.build('knife-zero-opts-3')).to eq(
+        '/test/knife zero chef_client \'name:*\' -x ec2-user')
     end
   end
 

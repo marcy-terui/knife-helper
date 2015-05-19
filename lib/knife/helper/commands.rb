@@ -21,6 +21,7 @@ module Knife
             cmd << " '#{c['condition']}'" if c.has_key?('condition') && c['condition']
             options = {}
             option_sets = {}
+            c['option_sets'] = Array(c['option_sets']) if c['option_sets'].is_a?(String)
             if c['option_sets'].is_a?(Array)
               c['option_sets'].each do |opts|
                 option_set(opts).each do |k,v|
