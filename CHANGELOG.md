@@ -1,3 +1,7 @@
+## 0.1.1
+
+* Allow string to option_sets of commands
+
 ## 0.1.0
 
 * Support set of options [#1]

@@ -71,17 +71,22 @@ includes:
   - example.yml
 
 settings:
-  command_base: /home/marcy/.rbenv/versions/2.1.5/bin/knife
+  command_base: bundle exec knife
 
 option_sets:
   - name: default
     options:
+      ssh-user: ec2-user
+      identity-file: ~/.ssh/example.pem
+      hint: ec2
 
 commands:
   - name: default
-    command: help
-    condition:
+    command: zero chef_client
+    condition: chef_environment:production
+    option_sets: default
     options:
+      attribute: ec2.public_ipv4
 ```
 
 ### includes
@@ -107,6 +112,10 @@ Type: `String`
 ### commands:condition
 Condition for search and execute command.  
 Type: `String`
+
+### commands:option_sets
+Option set to be used in the command.  
+Type: `String` or `Array`
 
 ### commands:options
 Command options.  
