@@ -46,7 +46,7 @@ module Knife
       end
 
       def exec(name)
-        system(build(name))
+        raise "Helper exec finished with non-zero exit code" unless system(build(name))
       end
 
       def complete_option(opt)
