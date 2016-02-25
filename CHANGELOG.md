@@ -1,3 +1,7 @@
+## 0.1.2
+
+- Raise error when `exec` command exited with non-zero code [#7][] ([@sawanoboly])
+
 ## 0.1.1
 
 * Allow string to option_sets of commands
@@ -32,4 +36,5 @@
 [#1]: https://github.com/marcy-terui/knife-helper/issues/1
 [#2]: https://github.com/marcy-terui/knife-helper/issues/2
 [#4]: https://github.com/marcy-terui/knife-helper/issues/4
+[#7]: https://github.com/marcy-terui/knife-helper/issues/7
 [@sawanoboly]: https://github.com/sawanoboly
